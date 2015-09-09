@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Facebook link:</strong>
+  <%= @link.facebook_link %>
+</p>
+
+<p>
+  <strong>Tiwitter link:</strong>
+  <%= @link.tiwitter_link %>
+</p>
+
+<p>
+  <strong>Google link:</strong>
+  <%= @link.google_link %>
+</p>
+
+<%= link_to 'Edit', edit_link_path(@link) %> |
+<%= link_to 'Back', links_path %>

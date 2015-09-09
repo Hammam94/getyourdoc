@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Getyourdoc</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+ <% if user_signed_in? %>
+    <ul class="nav navbar-nav navbar-right nav-tabs" role = "tablist">
+       <li><%= link_to "Sign out" , destroy_user_session_path , :method => :delete %></li>
+    </ul>
+  <%else%>
+    <ul class ="nav navbar-nav navbar-right ">
+      <li><%= link_to "Sign in" , new_user_session_path %></li>
+      <li><%= link_to " Sign up" , new_user_registration_path %></li>
+   </ul>
+
+  <%end%>
+
+<%= yield %>
+
+</body>
+</html>
